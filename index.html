@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="AERON — an independent microdrone project exploring lightweight flight and embedded systems."
+  >
+  <title>AERON | Microdrone Project</title>
+
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="header">
+    <a class="brand" href="#home" aria-label="AERON home">
+      <span class="brand-icon" aria-hidden="true">⌁</span>
+      AERON
+    </a>
+
+    <nav aria-label="Main navigation">
+      <a href="#vision">Vision</a>
+      <a href="#explore">Explore</a>
+      <a href="#engineering">Engineering</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- HERO: Your first image -->
+    <section class="hero" id="home">
+      <img
+        class="hero-image"
+        src="assets/delhi-sunset.png"
+        alt="Concept drone above a Delhi-inspired cityscape at sunset"
+        fetchpriority="high"
+      >
+
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content">
+        <p class="eyebrow">
+          <span class="status-dot"></span>
+          INDEPENDENT RESEARCH · INDIA
+        </p>
+
+        <h1>
+          Small form.<br>
+          Greater<br>
+          <span>possibility.</span>
+        </h1>
+
+        <p class="hero-description">
+          Exploring how lightweight flight can bring a new
+          perspective to the world around us.
+        </p>
+
+        <a class="button" href="#explore">
+          Explore the concept
+          <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+
+      <div class="hero-bottom">
+        <span>01 / A NEW PERSPECTIVE</span>
+        <span>CONCEPT IMAGERY</span>
+        <a href="#vision">DISCOVER ↓</a>
+      </div>
+    </section>
+
+    <!-- PROJECT VISION -->
+    <section class="section vision" id="vision">
+      <div>
+        <p class="eyebrow">THE VISION / 01</p>
+        <h2>Less weight.<br>More to discover.</h2>
+      </div>
+
+      <div>
+        <p class="lead">
+          A personal exploration of microflight,
+          embedded systems and thoughtful engineering.
+        </p>
+
+        <p>
+          Built around a simple question: how much can a small
+          aircraft do? This project explores lightweight construction,
+          efficient propulsion and compact flight electronics.
+        </p>
+
+        <div class="metrics">
+          <div>
+            <strong>&lt;100<span>g</span></strong>
+            <small>WEIGHT TARGET</small>
+          </div>
+
+          <div>
+            <strong>1<span>S</span></strong>
+            <small>LI-ION CONCEPT</small>
+          </div>
+
+          <div>
+            <strong>30<span>+ min</span></strong>
+            <small>ENDURANCE GOAL</small>
+          </div>
+        </div>
+
+        <p class="note">
+          Research targets, not measured performance.
+          Flight time and the final configuration require testing.
+        </p>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE CSS 3D CONCEPT -->
+    <section class="section lab" id="concept">
+      <div class="lab-copy">
+        <p class="eyebrow">FORM EXPLORATION / 02</p>
+        <h2>A different<br>point of view.</h2>
+
+        <p>
+          Rotate the aircraft and explore its form.
+          Drag the model, use the arrow keys, or adjust the viewing angle.
+        </p>
+
+        <p class="note">
+          This is a stylised CSS 3D aircraft study.
+          It is not an engineering CAD model or the final microdrone design.
+        </p>
+
+        <div class="controls">
+          <button id="rotate-button" type="button" aria-pressed="true">
+            Pause rotation
+          </button>
+
+          <button id="reset-button" type="button">
+            Reset view
+          </button>
+        </div>
+
+        <label class="angle-control" for="view-angle">
+          Viewing angle
+          <input
+            id="view-angle"
+            type="range"
+            min="-65"
+            max="10"
+            value="-24"
+          >
+        </label>
+      </div>
+
+      <div
+        class="stage"
+        id="stage"
+        tabindex="0"
+        role="group"
+        aria-label="Interactive aircraft. Drag or use left and right arrow keys to rotate."
+      >
+        <div class="stage-grid"></div>
+
+        <div class="aircraft" id="aircraft" aria-hidden="true">
+          <div class="fuselage">
+            <i class="face top"></i>
+            <i class="face bottom"></i>
+            <i class="face left"></i>
+            <i class="face right"></i>
+            <i class="face front"></i>
+            <i class="face back"></i>
+          </div>
+
+          <div class="wing"></div>
+          <div class="tail"></div>
+          <div class="fin"></div>
+
+          <div class="motor motor-left">
+            <i class="propeller"></i>
+          </div>
+
+          <div class="motor motor-right">
+            <i class="propeller"></i>
+          </div>
+
+          <div class="beacon"></div>
+        </div>
+
+        <span class="stage-label">AERON / CONCEPT 01</span>
+        <span class="drag-hint">DRAG TO ROTATE · ← →</span>
+      </div>
+    </section>
+
+    <!-- ALL SIX IMAGES: JavaScript controls this gallery -->
+    <section class="explore" id="explore">
+      <div class="section section-heading">
+        <div>
+          <p class="eyebrow">VISUAL FIELD NOTES / 03</p>
+          <h2>One idea.<br>Many horizons.</h2>
+        </div>
+
+        <p>
+          Six concept images. A visual exploration of environments
+          that could shape future research.
+        </p>
+      </div>
+
+      <div class="scene">
+        <img
+          id="scene-image"
+          src="assets/delhi-sunset.png"
+          alt="Delhi-inspired aerial concept at sunset"
+        >
+
+        <div class="scene-overlay"></div>
+
+        <div class="scene-copy" aria-live="polite" aria-atomic="true">
+          <p class="eyebrow" id="scene-tag">01 / URBAN HORIZONS</p>
+          <h3 id="scene-title">Above the familiar.</h3>
+
+          <p id="scene-description">
+            A sunset cityscape frames a new perspective on lightweight flight.
+          </p>
+
+          <p class="scene-note" id="scene-note">
+            Concept illustration, not documented flight footage.
+          </p>
+
+          <button id="enlarge-button" type="button">
+            View full image ↗
+          </button>
+        </div>
+
+        <span class="scene-count" id="scene-count">01 / 06</span>
+      </div>
+
+      <div
+        class="scene-tabs"
+        id="scene-tabs"
+        role="group"
+        aria-label="Choose a concept environment"
+      ></div>
+
+      <noscript>
+        <p class="section">
+          Enable JavaScript to switch between the six concept images
+          and interact with the aircraft.
+        </p>
+      </noscript>
+    </section>
+
+    <!-- ENGINEERING -->
+    <section class="section engineering" id="engineering">
+      <p class="eyebrow">ENGINEERING JOURNAL / 04</p>
+      <h2>Designed around<br>the right questions.</h2>
+
+      <div class="engineering-grid">
+        <article>
+          <span class="article-label">01 / STRUCTURE</span>
+          <h3>Every gram matters.</h3>
+          <p>
+            Balance frame rigidity, component placement and battery
+            mass within the all-up weight target.
+          </p>
+          <span class="article-footer">Weight budget → prototype</span>
+        </article>
+
+        <article>
+          <span class="article-label">02 / ENERGY</span>
+          <h3>Measure. Then optimise.</h3>
+          <p>
+            Evaluate motor and propeller efficiency at the required
+            thrust. Endurance estimates need measured power data.
+          </p>
+          <span class="article-footer">Thrust tests → endurance</span>
+        </article>
+
+        <article>
+          <span class="article-label">03 / CONTROL</span>
+          <h3>Keep the loop close.</h3>
+          <p>
+            Explore onboard sensing and flight control, with a
+            dedicated radio link for commands and telemetry.
+          </p>
+          <span class="article-footer">Bench validation → flight tests</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- ABOUT / PROJECT NOTES -->
+    <section class="section project" id="project">
+      <div>
+        <p class="eyebrow">BEHIND THE PROJECT</p>
+        <h2>Curiosity,<br>taking shape.</h2>
+      </div>
+
+      <div>
+        <p class="lead">
+          An independent microdrone project by Adil.
+        </p>
+
+        <p>
+          Combining a passion for drones with hands-on work in
+          embedded systems, sensors and hardware development.
+        </p>
+
+        <details>
+          <summary>Where the project stands</summary>
+          <p>
+            Concept development and component evaluation. The aircraft
+            images are visual references, not photographs of a completed
+            prototype. The final airframe may differ.
+          </p>
+        </details>
+
+        <details>
+          <summary>About the locations</summary>
+          <p>
+            The images evoke Delhi, mountain valleys, tea-growing
+            landscapes and river corridors. Exact locations are not
+            verified. They illustrate ideas, not completed deployments.
+          </p>
+        </details>
+
+        <details>
+          <summary>What comes next</summary>
+          <p>
+            Finalise the mass budget, test propulsion efficiency,
+            validate control electronics and document controlled
+            prototype trials.
+          </p>
+        </details>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section
+      class="section contact"
+      id="contact"
+      aria-labelledby="contact-title"
+    >
+      <div>
+        <p class="eyebrow">LET’S CONNECT</p>
+        <h2 id="contact-title">Get in touch.</h2>
+
+        <p>
+          Have a question, an idea, or an opportunity to collaborate?
+          I’d love to hear from you.
+        </p>
+
+        <a class="email-link" href="mailto:adilfaruk0011@gmail.com">
+          adilfaruk0011@gmail.com
+        </a>
+      </div>
+
+      <a
+        class="button"
+        href="mailto:adilfaruk0011@gmail.com?subject=Microdrone%20Project%20Enquiry"
+      >
+        Get in touch
+        <span aria-hidden="true">↗</span>
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    <a class="brand" href="#home">⌁ AERON</a>
+    <p>Microflight. Thoughtfully explored.</p>
+    <a href="#home">Back to top ↑</a>
+
+    <small>
+      © <span id="year"></span> Adil · Independent concept project
+    </small>
+  </footer>
+
+  <!-- FULL-SIZE IMAGE VIEW -->
+  <dialog id="lightbox" aria-label="Full-size concept image">
+    <button id="close-lightbox" type="button" autofocus>
+      Close ×
+    </button>
+    <img id="full-image" alt="">
+    <p id="full-caption"></p>
+  </dialog>
+</body>
+</html>
